@@ -38,3 +38,12 @@ go.work
 # Ignore all local history of files
 .history
 .ionide
+
+# Env files
+.env
+
+# Sqlite files
+*.db
+
+# Builded bin
+server

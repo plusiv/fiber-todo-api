@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gofiber/contrib/swagger"
 	"github.com/gofiber/fiber/v2"
+	"github.com/plusiv/fiber-todo-api/database"
 )
 
 func main() {
@@ -13,6 +14,9 @@ func main() {
 		Path:     "swagger",
 		Title:    "Swagger API Docs",
 	}
+
+	// Connect with database
+	database.ConnectDB()
 
 	app.Use(swagger.New(cfg))
 
