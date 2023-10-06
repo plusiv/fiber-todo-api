@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/plusiv/fiber-todo-api/config"
-	"github.com/plusiv/fiber-todo-api/internal/model"
+	"github.com/plusiv/fiber-todo-api/internals/model"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )

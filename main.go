@@ -4,6 +4,7 @@ import (
 	"github.com/gofiber/contrib/swagger"
 	"github.com/gofiber/fiber/v2"
 	"github.com/plusiv/fiber-todo-api/database"
+	"github.com/plusiv/fiber-todo-api/router"
 )
 
 func main() {
@@ -19,6 +20,7 @@ func main() {
 	database.ConnectDB()
 
 	app.Use(swagger.New(cfg))
+	router.SetupRouter(app)
 
 	app.Get("/ping", func(c *fiber.Ctx) (err error) {
 		err = c.SendString("pong");
