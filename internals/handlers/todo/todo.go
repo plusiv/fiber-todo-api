@@ -1,7 +1,10 @@
 package todoHandler
 
 import (
+	"fmt"
+
 	"github.com/gofiber/fiber/v2"
+	"github.com/google/uuid"
 	"github.com/plusiv/fiber-todo-api/database"
 	"github.com/plusiv/fiber-todo-api/internals/model"
 )
@@ -17,4 +20,19 @@ func GetTodos(c *fiber.Ctx) error {
 	}
 
 	return c.JSON(fiber.Map{"status": "success", "message": "TODOs found", "data": todos})
+}
+
+func GetTodo(c *fiber.Ctx) error {
+	db := database.DB
+
+	var todo model.ToDo
+
+	todoId := c.Params("todoId")
+	db.Find(&todo, todoId)
+
+	if todo.ID == uuid.Nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"status": "error", "message": fmt.Sprintf("Todo with Id %s not found", todoId), "data": nil})
+	}
+
+	return c.JSON(fiber.Map{"status": "success", "message": "TODOs found", "data": todo})
 }
