@@ -28,13 +28,14 @@ func ConnectDB(){
 	DB, err := gorm.Open(sqlite.Open(dsn))
 	*/
 
-	DB, err := gorm.Open(sqlite.Open(fmt.Sprintf("%s.db", config.Config("DB_NAME"))))
+	DB, err = gorm.Open(sqlite.Open(fmt.Sprintf("%s.db", config.Config("DB_NAME"))))
 
 	if err != nil {
 		log.Fatal("Unable to connect with Database.")
 	}
 
-	DB.AutoMigrate(&model.TODO{})
 	log.Print("Connected to Database")
+	DB.AutoMigrate(&model.ToDo{})
+	log.Print("Database migrated")
 
 }
