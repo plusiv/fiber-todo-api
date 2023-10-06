@@ -6,7 +6,7 @@ import (
 	todoRoutes "github.com/plusiv/fiber-todo-api/internals/routes/todo"
 )
 
-func SetupRouter(app *fiber.App){
+func SetupRouter(app *fiber.App) {
 	api := app.Group("/api", logger.New())
 	apiV1 := api.Group("/v1", logger.New())
 

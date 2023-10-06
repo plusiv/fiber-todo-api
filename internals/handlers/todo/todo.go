@@ -9,7 +9,7 @@ import (
 func GetTodos(c *fiber.Ctx) error {
 	db := database.DB
 	var todos []model.ToDo
-	
+
 	db.Find(&todos)
 
 	if len(todos) == 0 {

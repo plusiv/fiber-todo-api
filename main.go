@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	app := fiber.New();
+	app := fiber.New()
 	cfg := swagger.Config{
 		BasePath: "/",
 		FilePath: "./docs/swagger.json",
@@ -23,9 +23,9 @@ func main() {
 	router.SetupRouter(app)
 
 	app.Get("/ping", func(c *fiber.Ctx) (err error) {
-		err = c.SendString("pong");
+		err = c.SendString("pong")
 		return
 	})
 
-	app.Listen(":3000");
+	app.Listen(":3000")
 }

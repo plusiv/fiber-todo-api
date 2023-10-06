@@ -5,7 +5,7 @@ import (
 	todoHandler "github.com/plusiv/fiber-todo-api/internals/handlers/todo"
 )
 
-func SetupTodoRoutes(router fiber.Router){
+func SetupTodoRoutes(router fiber.Router) {
 	todo := router.Group("/todos")
 	todo.Get("/", todoHandler.GetTodos)
 }
