@@ -19,7 +19,7 @@ func GetTodos(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"status": "error", "message": "No ToDos found", "data": nil})
 	}
 
-	return c.JSON(fiber.Map{"status": "success", "message": "TODOs found", "data": todos})
+	return c.JSON(fiber.Map{"status": "success", "message": "ToDos found", "data": todos})
 }
 
 func GetTodo(c *fiber.Ctx) error {
@@ -28,7 +28,7 @@ func GetTodo(c *fiber.Ctx) error {
 	var todo model.ToDo
 
 	todoId := c.Params("todoId")
-	db.Find(&todo, todoId)
+	db.Find(&todo, "id = ?", todoId)
 
 	if todo.ID == uuid.Nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"status": "error", "message": fmt.Sprintf("Todo with Id %s not found", todoId), "data": nil})
