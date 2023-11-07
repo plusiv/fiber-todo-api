@@ -1,0 +1,24 @@
+basePath: /
+host: localhost:8080
+info:
+  contact:
+    email: jorgmassih@gmail.com
+    name: Jorge Massih
+  description: Sample API for creating ToDos tasks.
+  license:
+    name: MIT
+    url: https://github.com/plusiv/fiber-todo-api/blob/main/LICENSE
+  termsOfService: http://swagger.io/terms/
+  title: Fiber ToDo API
+  version: "1.0"
+paths:
+  /todos/:
+    get:
+      consumes:
+      - application/json
+      description: Get all ToDos
+      produces:
+      - application/json
+      responses: {}
+      summary: Get all ToDos
+swagger: "2.0"

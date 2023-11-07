@@ -9,6 +9,12 @@ import (
 	"github.com/plusiv/fiber-todo-api/internals/model"
 )
 
+// GetTodos godoc
+// @Summary      Get all ToDos
+// @Description  Get all ToDos
+// @Accept       json
+// @Produce      json
+// @Router       /todos/ [get]
 func GetTodos(c *fiber.Ctx) error {
 	db := database.DB
 	var todos []model.ToDo
