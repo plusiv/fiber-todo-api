@@ -9,16 +9,16 @@ import (
 	"github.com/plusiv/fiber-todo-api/router"
 )
 
-// @title Fiber ToDo API
-// @version 1.0
-// @description Sample API for creating ToDos tasks.
-// @termsOfService http://swagger.io/terms/
-// @contact.name Jorge Massih
-// @contact.email jorgmassih@gmail.com
-// @license.name MIT
-// @license.url https://github.com/plusiv/fiber-todo-api/blob/main/LICENSE
-// @host localhost:8080
-// @BasePath /
+// @title			Fiber ToDo API
+// @version		1.0
+// @description	Sample API for creating ToDos tasks.
+// @termsOfService	http://swagger.io/terms/
+// @contact.name	Jorge Massih
+// @contact.email	jorgmassih@gmail.com
+// @license.name	MIT
+// @license.url	https://github.com/plusiv/fiber-todo-api/blob/main/LICENSE
+// @host			localhost:8080
+// @BasePath		/
 func main() {
 	app := fiber.New()
 
